@@ -1,0 +1,18 @@
+# cache
+
+*cache__*
+
+# zip, rar, tar
+
+*.zip
+*.rar
+*.tar*
+
+# pyc
+
+*.pyc
+
+# venv
+
+venv/
+
