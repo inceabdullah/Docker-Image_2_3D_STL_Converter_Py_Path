@@ -12,12 +12,33 @@ from time import sleep
 
 
 
+
+
 # ls one image name or the first name
 oneFile = ls.ls_dir("images")["files"][0]
 
 # open gimp with quietly 
 # gimp --no-splash  --console-messages 
 
+# remove old folders then make them
+#
+#   /root/bla/bla/file.png
+#   split("/")[-1]
+#   replace(,"")
+#   + "aaaaa_scaled_images"
+
+oneFileSplitted = oneFile.split("/")
+willBeRemovedPath = oneFile.replace(oneFileSplitted[-1],"") + "aaaaa_scaled_images"
+
+removeFoldersCmd = 'rm -rf "%s"' % (willBeRemovedPath)
+
+os.system("""/bin/sh -c '%s' &""" % (removeFoldersCmd))
+
+willBeCreatedPath = willBeRemovedPath = oneFile.replace(oneFileSplitted[-1],"") + "aaaaa_scaled_images/aaaaa_svg"
+
+createFoldersCmd = 'mkdir -p "%s"' % (willBeCreatedPath)
+
+os.system("""/bin/sh -c '%s' &""" % (createFoldersCmd))
 
 
 gimpCmd = 'gimp --no-splash  --console-messages --no-data  "%s"' % oneFile 

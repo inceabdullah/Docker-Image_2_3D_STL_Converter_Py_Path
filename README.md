@@ -30,6 +30,6 @@ also opens `inkscape` then, `blender`.
 # in Docker
 
 
-`debian_9_desktop_inkscape_gimp_blender` is used to convert fromany picture file to `svg` file.
+`debian_9_desktop_inkscape_gimp_blender` is used to convert from any picture file to `svg` file.
 
 Docker repository name is `/hacikoder` on `Docker Hub`.
